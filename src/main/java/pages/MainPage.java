@@ -24,6 +24,18 @@ public class MainPage {
     @FindBy(css = "a[href='/logout']")
     protected WebElement logoutLink;
 
+    @FindBy(xpath = "//p[text()='Your operations']")
+    protected WebElement yourOperationsHead;
+
+    @FindBy(xpath = "//h2[contains(text(),'Alerts')]")
+    protected WebElement alertsHead;
+
+    @FindBy(xpath = "//h2[contains(text(),'Notifications')]")
+    protected WebElement notificationsHead;
+
+    @FindBy(xpath = "//p[contains(text(),'Only for users with admin roles')]")
+    protected WebElement onlyForAdminHead;
+
     public MainPage(WebDriver driver) {
 
         this.driver = driver;
