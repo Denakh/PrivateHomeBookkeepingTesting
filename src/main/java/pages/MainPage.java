@@ -36,6 +36,21 @@ public class MainPage {
     @FindBy(xpath = "//p[contains(text(),'Only for users with admin roles')]")
     protected WebElement onlyForAdminHead;
 
+    @FindBy(xpath = "//a[@href='/income_fixation' and text()='Income fixation']")
+    protected WebElement incomeFixationLink;
+
+    @FindBy(xpath = "//a[@href='/expense_fixation' and text()='Expense fixation (not current)']")
+    protected WebElement expenseFixationLink;
+
+    @FindBy(xpath = "//a[@href='/debt_fixation' and text()='Debt fixation (in or out)']")
+    protected WebElement debtFixationLink;
+
+    @FindBy(xpath = "//a[@href='/deferrals_fixation' and text()='Deferrals (expenses) fixation']")
+    protected WebElement deferralsFixationLink;
+
+    @FindBy(xpath = "//a[@href='/communal_pays_fixation' and text()='Communal pays fixation']")
+    protected WebElement communalPaysFixationLink;
+
     public MainPage(WebDriver driver) {
 
         this.driver = driver;
