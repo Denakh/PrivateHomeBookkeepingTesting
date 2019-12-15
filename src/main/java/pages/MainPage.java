@@ -51,6 +51,18 @@ public class MainPage {
     @FindBy(xpath = "//a[@href='/communal_pays_fixation' and text()='Communal pays fixation']")
     protected WebElement communalPaysFixationLink;
 
+    @FindBy(xpath = "//a[@href='/data_getting' and text()='Main data getting']")
+    protected WebElement dataGettingLink;
+
+    @FindBy(xpath = "//a[@href='/current_expenses_rate' and text()='Current expenses rate']")
+    protected WebElement currentExpensesRateLink;
+
+    @FindBy(xpath = "//a[@href='/foreign_currencies' and text()='Foreign currencies operations']")
+    protected WebElement foreignCurrenciesFixationLink;
+
+    @FindBy(xpath = "//a[@href='/allocation_of_profits' and text()='Allocation of profits']")
+    protected WebElement allocationOfProfitsLink;
+
     public MainPage(WebDriver driver) {
 
         this.driver = driver;
