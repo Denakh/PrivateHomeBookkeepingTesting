@@ -15,8 +15,11 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <tested.host>https://private-home-bookkeeping-pv.herokuapp.com</tested.host>
+    <user.pa.name>user</user.pa.name>
+    <user.pa.password>password</user.pa.password>
   </properties>
 
   <dependencies>
@@ -99,5 +102,18 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <configuration>
+          <systemPropertyVariables>
+            <tested.host>${tested.host}</tested.host>
+            <user.pa.name>${user.pa.name}</user.pa.name>
+            <user.pa.password>${user.pa.password}</user.pa.password>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

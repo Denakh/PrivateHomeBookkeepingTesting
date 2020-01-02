@@ -8,11 +8,12 @@ import pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
 
+import static data.PHBTestData.loginPageEndPoint;
+
 public class BasePHBTestSetups {
 
     protected WebDriver driver;
     protected LoginPage loginPage;
-
 
     @BeforeClass(alwaysRun = true)
     public void setUpGeneral() throws Exception {
@@ -20,7 +21,8 @@ public class BasePHBTestSetups {
         System.setProperty("webdriver.chrome.driver", "C:\\WebDrivers\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://private-home-bookkeeping-pv.herokuapp.com/login");
+        driver.get(loginPageEndPoint);
+//      driver.get("https://private-home-bookkeeping-pv.herokuapp.com/login");
 //      driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
     }
