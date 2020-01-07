@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -69,5 +70,16 @@ public class MainPage {
         PageFactory.initElements(driver, this);
 
     }
+
+    @Step("I click on logout link")
+    public void clickOnLogoutLink() {
+        logoutLink.click();
+    }
+
+    @Step("Verify main page is loaded")
+    public boolean isMainPageLoaded() {
+        return mainPageHead.isDisplayed() && logoutLink.isDisplayed();
+    }
+
 
 }

@@ -18,8 +18,8 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <tested.host>https://private-home-bookkeeping-pv.herokuapp.com</tested.host>
-    <user.pa.name>user</user.pa.name>
-    <user.pa.password>password</user.pa.password>
+    <test.user.name>test_user</test.user.name>
+    <test.user.password>test_user</test.user.password>
   </properties>
 
   <dependencies>
@@ -109,8 +109,8 @@
         <configuration>
           <systemPropertyVariables>
             <tested.host>${tested.host}</tested.host>
-            <user.pa.name>${user.pa.name}</user.pa.name>
-            <user.pa.password>${user.pa.password}</user.pa.password>
+            <test.user.name>${test.user.name}</test.user.name>
+            <test.user.password>${test.user.password}</test.user.password>
           </systemPropertyVariables>
         </configuration>
       </plugin>

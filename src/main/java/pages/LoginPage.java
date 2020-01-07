@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,4 +28,26 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
 
     }
+
+    @Step("I set test user login")
+    public LoginPage setUserLogin(String userLogin) {
+//        Log.LOG.debug("Clicking on hotel menu");
+        loginInput.sendKeys(userLogin);
+        return this;
+    }
+
+    @Step("I set test user password")
+    public LoginPage setUserPassword(String userPassword) {
+//        Log.LOG.debug("Clicking on hotel menu");
+        passwordInput.sendKeys(userPassword);
+        return this;
+    }
+
+    @Step("I click on the submit input")
+    public LoginPage clickOnSubmitInput() {
+//        Log.LOG.debug("Clicking on hotel menu");
+        submitInput.click();
+        return this;
+    }
+
 }
