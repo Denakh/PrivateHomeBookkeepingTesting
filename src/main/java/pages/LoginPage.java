@@ -44,10 +44,25 @@ public class LoginPage {
     }
 
     @Step("I click on the submit input")
-    public LoginPage clickOnSubmitInput() {
+    public MainPage clickOnSubmitInput() {
 //        Log.LOG.debug("Clicking on hotel menu");
         submitInput.click();
-        return this;
+        return new MainPage(driver);
+    }
+
+    @Step("I click on the Register New User link")
+    public NewUserPage clickOnRegisterNewUserLink() {
+//        Log.LOG.debug("Clicking on hotel menu");
+        registerNewUserLink.click();
+        return new NewUserPage(driver);
+    }
+
+    @Step("Verify login page is loaded")
+    public boolean isLoginPageLoaded() {
+        return loginInput.isDisplayed() &&
+                passwordInput.isDisplayed() &&
+                submitInput.isDisplayed() &&
+                registerNewUserLink.isDisplayed();
     }
 
 }

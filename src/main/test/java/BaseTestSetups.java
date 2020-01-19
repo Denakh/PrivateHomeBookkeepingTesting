@@ -1,16 +1,13 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestContext;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.LoginPage;
 
-import java.util.concurrent.TimeUnit;
+import static data.TestData.loginPageEndPoint;
 
-import static data.PHBTestData.loginPageEndPoint;
-
-public class BasePHBTestSetups {
+public class BaseTestSetups {
 
     protected WebDriver driver;
     protected LoginPage loginPage;
