@@ -14,23 +14,14 @@ public class LoginPageTests extends BaseTestSetups {
     @Test(priority = 1, description = "Verify that registered user can log in")
     @Severity(SeverityLevel.BLOCKER)
     public void testRegisteredUserCanLogIn() {
-//      String actualAddHotelNameText = newHotelPage.getTypedNameValue();
-//      Log.LOG.debug("Comparison of actual result ('" + actualAddHotelNameText + "') " +
-//              "and expected ('" + text + "')");
-        MainPage mainPage = loginPage.setUserLogin(System.getProperty("test.user.name"))
-                .setUserPassword(System.getProperty("test.user.password"))
-                .clickOnSubmitInput();
-        boolean actualIsMainPageLoaded = mainPage.isMainPageLoaded();
+        MainPage mainPage = goToTheMainPage();
+        Assert.assertNotNull(mainPage, "Main page isn't loaded");
         mainPage.clickOnLogoutLink();
-        Assert.assertTrue(actualIsMainPageLoaded, "Main page isn't loaded");
     }
 
     @Test(priority = 1, description = "Verify that user can go to New User page")
     @Severity(SeverityLevel.BLOCKER)
-    public void testUserCanGoToNewUserPage() throws InterruptedException {
-//      String actualAddHotelNameText = newHotelPage.getTypedNameValue();
-//      Log.LOG.debug("Comparison of actual result ('" + actualAddHotelNameText + "') " +
-//              "and expected ('" + text + "')");
+    public void testUserCanGoToNewUserPage() {
         NewUserPage newUserPage = loginPage.clickOnRegisterNewUserLink();
         boolean actualIsNewUserPageLoaded = newUserPage.isNewUserPageLoaded();
         newUserPage.returnToLoginPage();
@@ -43,9 +34,6 @@ public class LoginPageTests extends BaseTestSetups {
         if (!loginPage.isLoginPageLoaded()) {
             driver.get(loginPageEndPoint);
         }
-//        if (testResult.getStatus() == ITestResult.FAILURE) {
-//            Log.LOG.debug("Getting screenshot because of test is failed: ");
-//            Screenshots.getScreenShot(driver);
     }
 
 }
