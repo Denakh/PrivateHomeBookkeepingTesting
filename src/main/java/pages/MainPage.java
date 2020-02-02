@@ -76,10 +76,29 @@ public class MainPage {
         logoutLink.click();
     }
 
-    @Step("Verify main page is loaded")
+    @Step("Verify that main page is loaded")
     public boolean isMainPageLoaded() {
         return mainPageHead.isDisplayed() && logoutLink.isDisplayed();
     }
 
+    @Step("Verify that main page has all expected elements")
+    public boolean areNecessaryElementsPresent() {
+        return newEmailInput.isDisplayed() &&
+                newPhoneInput.isDisplayed() &&
+                submitUpdateInput.isDisplayed() &&
+                yourOperationsHead.isDisplayed() &&
+                alertsHead.isDisplayed() &&
+                notificationsHead.isDisplayed() &&
+                onlyForAdminHead.isDisplayed() &&
+                incomeFixationLink.isDisplayed() &&
+                expenseFixationLink.isDisplayed() &&
+                debtFixationLink.isDisplayed() &&
+                deferralsFixationLink.isDisplayed() &&
+                communalPaysFixationLink.isDisplayed() &&
+                dataGettingLink.isDisplayed() &&
+                currentExpensesRateLink.isDisplayed() &&
+                foreignCurrenciesFixationLink.isDisplayed() &&
+                allocationOfProfitsLink.isDisplayed();
+    }
 
 }
