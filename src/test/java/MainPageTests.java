@@ -17,8 +17,8 @@ public class MainPageTests extends BaseTestSetups {
         this.mainPage = mainPage;
     }
 
-    @Test(priority = 1, description = "Verify that all necessary page elements are present")
-    @Severity(SeverityLevel.BLOCKER)
+    @Test(priority = 2, description = "Verify that all necessary page elements are present")
+    @Severity(SeverityLevel.CRITICAL)
     public void testNecessaryPageElementsArePresent() {
         Assert.assertTrue(mainPage.areNecessaryElementsPresent());
     }
