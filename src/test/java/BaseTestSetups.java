@@ -6,8 +6,6 @@ import org.testng.annotations.BeforeClass;
 import pages.LoginPage;
 import pages.MainPage;
 
-import static data.TestData.loginPageEndPoint;
-
 public class BaseTestSetups {
 
     protected WebDriver driver;
@@ -18,7 +16,8 @@ public class BaseTestSetups {
         System.setProperty("webdriver.chrome.driver", "C:\\WebDrivers\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(loginPageEndPoint);
+        // driver.get(loginPageEndPoint);
+        driver.get("https://private-home-bookkeeping-pv.herokuapp.com/login");
         loginPage = new LoginPage(driver);
     }
 
