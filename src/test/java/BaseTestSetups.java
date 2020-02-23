@@ -16,7 +16,7 @@ public class BaseTestSetups {
         System.setProperty("webdriver.chrome.driver", "C:\\WebDrivers\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        // driver.get(loginPageEndPoint);
+//      driver.get(loginPageEndPoint);
         driver.get("https://private-home-bookkeeping-pv.herokuapp.com/login");
         loginPage = new LoginPage(driver);
     }
@@ -29,8 +29,11 @@ public class BaseTestSetups {
 
     protected MainPage goToTheMainPage(){
         LoginPage newloginPage = new LoginPage(driver);
-        MainPage mainPage = newloginPage.setUserLogin(System.getProperty("test.user.name"))
-                .setUserPassword(System.getProperty("test.user.password"))
+//      MainPage mainPage = newloginPage.setUserLogin(System.getProperty("test.user.name"))
+//              .setUserPassword(System.getProperty("test.user.password"))
+//              .clickOnSubmitInput();
+        MainPage mainPage = newloginPage.setUserLogin("test_user")
+                .setUserPassword("test_user")
                 .clickOnSubmitInput();
         if (mainPage.isMainPageLoaded()) {
             return mainPage;
