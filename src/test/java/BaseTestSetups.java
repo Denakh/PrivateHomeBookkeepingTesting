@@ -32,8 +32,11 @@ public class BaseTestSetups {
 //      MainPage mainPage = newloginPage.setUserLogin(System.getProperty("test.user.name"))
 //              .setUserPassword(System.getProperty("test.user.password"))
 //              .clickOnSubmitInput();
-        MainPage mainPage = newloginPage.setUserLogin("test_user")
-                .setUserPassword("test_user")
+//        MainPage mainPage = newloginPage.setUserLogin("test_user")
+//                .setUserPassword("test_user")
+//                .clickOnSubmitInput();
+        MainPage mainPage = newloginPage.setUserLogin(System.getenv("USER_NAME"))
+                .setUserPassword(System.getenv("USER_PASSWORD"))
                 .clickOnSubmitInput();
         if (mainPage.isMainPageLoaded()) {
             return mainPage;
