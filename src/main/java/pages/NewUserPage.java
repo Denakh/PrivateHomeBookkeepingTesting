@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static data.TestData.LOGIN_PAGE_END_POINT;
+
 public class NewUserPage {
 
     protected WebDriver driver;
@@ -43,8 +45,7 @@ public class NewUserPage {
 
     @Step("Verify New User page is loaded")
     public LoginPage returnToLoginPage() {
-        // driver.get(loginPageEndPoint);
-        driver.get("https://private-home-bookkeeping-pv.herokuapp.com/login");
+        driver.get(LOGIN_PAGE_END_POINT);
         return new LoginPage(driver);
     }
 

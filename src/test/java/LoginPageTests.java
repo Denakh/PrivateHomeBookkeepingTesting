@@ -7,7 +7,7 @@ import pages.LoginPage;
 import pages.MainPage;
 import pages.NewUserPage;
 
-import static data.TestData.loginPageEndPoint;
+import static data.TestData.LOGIN_PAGE_END_POINT;
 
 public class LoginPageTests extends BaseTestSetups {
 
@@ -32,7 +32,7 @@ public class LoginPageTests extends BaseTestSetups {
     public void tearDown() {
         LoginPage loginPage = new LoginPage(driver);
         if (!loginPage.isLoginPageLoaded()) {
-            driver.get(loginPageEndPoint);
+            driver.get(LOGIN_PAGE_END_POINT);
         }
     }
 
